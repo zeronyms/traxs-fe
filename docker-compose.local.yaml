@@ -1,0 +1,17 @@
+services:
+  next-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder # Ubah ke builder agar semua file tersedia
+    container_name: traxs-fe-local
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules # Anonymous volume: Melindungi node_modules Docker agar TIDAK tertimpa folder laptop
+      - /app/.next        # Anonymous volume: Melindungi cache build Docker
+    environment:
+      - NODE_ENV=development
+      - WATCHPACK_POLLING=true
+    command: npx next dev # Gunakan 'npx' agar lebih pasti menemukan binary next
