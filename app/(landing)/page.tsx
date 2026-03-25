@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
-import Hero from "./_components/hero";
-import ProblemSolution from "./_components/problem-solution";
-import Features from "./_components/features";
-import HowItWorks from "./_components/how-it-works";
+import Hero from "../../components/landing/hero";
+import ProblemSolution from "../../components/landing/problem-solution";
+import Features from "../../components/landing/features";
+import HowItWorks from "../../components/landing/how-it-works";
 
 const IndexPage: NextPage = () => {
   return (

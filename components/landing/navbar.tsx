@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ScanQrCode } from "lucide-react";
-import React from "react";
+import Link from "next/link";
 
 function Navbar() {
   return (
@@ -30,17 +30,18 @@ function Navbar() {
 
         <div className="flex items-center gap-3">
           <Button
+            asChild
             variant="ghost"
             size="sm"
             className="font-semibold text-blue-600 hover:text-blue-700 hover:bg-blue-50"
           >
-            Login
+            <Link href="/login">Login</Link>
           </Button>
           <Button
             size="sm"
             className="bg-blue-600 hover:bg-blue-700 rounded-full px-5 shadow-sm"
           >
-            Register
+            <Link href="/register">Register</Link>
           </Button>
         </div>
       </nav>
