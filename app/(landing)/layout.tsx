@@ -1,11 +1,16 @@
-export default function RootLayout({
+import Footer from "./_components/footer";
+import Navbar from "./_components/navbar";
+
+export default function LandingPageLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="id" className="h-full antialiased">
-      <body className="min-h-full flex flex-col">{children}</body>
-    </html>
+    <div className="min-h-screen bg-slate-50 text-slate-900 overflow-hidden">
+      <Navbar />
+      <main>{children}</main>
+      <Footer />
+    </div>
   );
 }
